@@ -14,6 +14,8 @@ pipeline {
                     curl -Lo ./snyk-delta "https://github.com/snyk-tech-services/snyk-delta/releases/download/v1.12.0/snyk-delta-linux"
                     chmod +x snyk
                     chmod +x snyk-delta
+                    mv ./snyk /usr/local/bin/
+                    mv ./snyk-delta /usr/local/bin/
                 '''
             }
         }
@@ -22,7 +24,7 @@ pipeline {
             steps {
                 sh '''
                     cd app
-                    ./snyk test --severity-threshold=high --json --print-deps | ./snyk-delta  --baselineOrg $SNYK_ORG
+                    snyk test --severity-threshold=high --json --print-deps | snyk-delta  --baselineOrg $SNYK_ORG
                     cd ..
                 '''
             }
