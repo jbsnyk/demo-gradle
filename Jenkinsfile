@@ -21,7 +21,7 @@ pipeline {
         stage('Snyk Test using Snyk CLI') {
             steps {
                 sh '''
-                    ./snyk test --severity-threshold=high --json --print-deps | ./snyk-delta  --baselineOrg $SNYK_ORG
+                    ./snyk test --json --print-deps | ./snyk-delta  --baselineOrg $SNYK_ORG
                 '''
             }
         }
