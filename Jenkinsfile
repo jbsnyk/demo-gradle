@@ -7,13 +7,13 @@ pipeline {
     }
 
     stages {
-        stage('Download Snyk CLI, snyk-to-html') {
+        stage('Download Snyk CLI, snyk-delta') {
             steps {
                 sh '''
                     curl -Lo ./snyk "https://static.snyk.io/cli/latest/snyk-linux"
                     curl -Lo ./snyk-delta "https://github.com/snyk-tech-services/snyk-delta/releases/download/v1.12.0/snyk-delta-linux"
                     chmod +x snyk
-                    chmod +x snyk-to-html
+                    chmod +x snyk-delta
                 '''
             }
         }
