@@ -19,6 +19,6 @@ jobs:
 
       - name: List deps
         run: |
-          ls -la
           cd app
+          ls -la
         
