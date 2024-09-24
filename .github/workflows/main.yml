@@ -19,8 +19,4 @@ jobs:
 
       - name: List deps
         run: ls -la
-
-      - name: Install Snyk
-        run: npm install -g snyk
-
         
