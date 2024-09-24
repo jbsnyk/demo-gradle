@@ -1,0 +1,26 @@
+name: Snyk Gradle Testing
+
+on: workflow_dispatch
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set Up JDK 17
+        uses: actions/set-up-java@v4
+        with:
+          java-version: "17"
+          distribution: "adopt"
+
+      - name: Install Gradle depdendencies
+        run: ./gradlew build --no-daemon
+
+      - name: List deps
+        run: ./gradlew depdendencies
+
+      - name: Install Snyk
+        run: npm install -g snyk
+
+        
