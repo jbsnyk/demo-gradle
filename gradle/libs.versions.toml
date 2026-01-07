@@ -2,7 +2,7 @@
 # Define versions here
 log4j = "2.14.1"
 struts = "2.3.37"
-commons-collections = "3.2.2"
+commons-collections = "3.2.1"
 junit = "4.12"
 
 [libraries]
