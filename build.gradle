@@ -1,19 +1,13 @@
-plugins {
-    id 'java'
-    // Spring Boot 3.4.0 manages Spring Framework to 6.2.0
-    id 'org.springframework.boot' version '3.4.0'
-    id 'io.spring.dependency-management' version '1.1.7'
-}
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
-    // Root Dependency
-    // This pulls in spring-tx and spring-core transitively
-    implementation 'com.arangodb:arangodb-spring-data:4.5.0'
+    // Before: implementation 'org.apache.logging.log4j:log4j-core:2.14.1'
+    implementation libs.apache.log4j.core
+    implementation libs.apache.log4j.api
     
-    // Standard Starters
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    // Before: implementation 'org.apache.struts:struts2-core:2.3.37'
+    implementation libs.apache.struts.core
+    
+    // Before: implementation 'commons-collections:commons-collections:3.2.1'
+    implementation libs.apache.commons.collections
+
+    testImplementation libs.junit
 }
